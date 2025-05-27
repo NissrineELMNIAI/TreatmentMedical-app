@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: #f0f8ff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PatientVisualiserController">
+   <children>
+      <Label fx:id="labelInfo" layoutX="50.0" layoutY="40.0" prefWidth="300.0" style="-fx-font-size: 14px;" wrapText="true" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.rendezVousController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="624.0" style="-fx-background-color: #bfd9fb;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="44.0" prefWidth="700.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fx:id="logo" accessibleRole="BUTTON" fitHeight="54.0" fitWidth="172.0" onMouseClicked="#ouvrirAccueil" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/memoPharma1.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="patientsButton" mnemonicParsing="false" onAction="#ouvrirPatients" prefHeight="54.0" prefWidth="121.0" style="-fx-background-color: white; -fx-text-fill: blue;" text="Mes Patients" textFill="#378ac9">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="traitementsButton" mnemonicParsing="false" onAction="#ouvrirTraitements" prefHeight="54.0" prefWidth="142.0" style="-fx-background-color: white; -fx-text-fill: rgb(36, 36, 219);" text="Mes Traitements" textFill="#0b8eeb">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="rdvButton" mnemonicParsing="false" onAction="#ouvrirRendezVous" prefHeight="54.0" prefWidth="147.0" style="-fx-background-color: #bfd9fb; -fx-text-fill: rgb(36, 36, 219);" text="Mes Rendez-Vous" textFill="#378ac9">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="staticon" mnemonicParsing="false" prefHeight="54.0" prefWidth="68.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView accessibleRole="BUTTON" fitHeight="54.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/statistique.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="connexicon" mnemonicParsing="false" prefHeight="55.0" prefWidth="59.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fx:id="connexicon" accessibleRole="BUTTON" fitHeight="41.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/profile.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="tablePatients" layoutX="-4.0" layoutY="155.2" prefHeight="161.0" prefWidth="664.0" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="155.0">
+               <columns>
+                  <TableColumn fx:id="colID" prefWidth="53.60000514984131" style="-fx-alignment: center;" text="Id" />
+                  <TableColumn fx:id="colDate" prefWidth="168.8000259399414" style="-fx-alignment: center;" text="Date" />
+                  <TableColumn fx:id="colHeure" prefWidth="89.59994506835938" style="-fx-alignment: center;" text="Heure" />
+                  <TableColumn fx:id="colObjet" prefWidth="206.39996337890625" style="-fx-alignment: center;" text="Objet" />
+                  <TableColumn fx:id="colActions" prefWidth="145.5999755859375" style="-fx-alignment: center;" text="Options" />
+               </columns>
+            
+            </TableView>
+            <AnchorPane layoutX="14.0" layoutY="85.0" prefHeight="63.0" prefWidth="675.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="2.0">
+               <children>
+                  <TextField fx:id="searchField" layoutX="14.0" layoutY="17.0" prefHeight="30.0" prefWidth="273.0" promptText="Chercher" style="-fx-background-radius: 20;" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="addIcon" layoutX="533.0" layoutY="328.0" mnemonicParsing="false" style="-fx-background-color: rgb(4, 138, 240);" text="Ajouter Rendez-Vous" textFill="WHITE" AnchorPane.rightAnchor="8.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

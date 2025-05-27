@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PatientController">
+   <children>
+      <AnchorPane prefHeight="460.0" prefWidth="710.0" style="-fx-background-color: #bfd9fb;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fx:id="logo" accessibleRole="BUTTON" fitHeight="54.0" fitWidth="172.0" onMouseClicked="#ouvrirAccueil" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/memoPharma1.png" />
+                     </image>
+                  </ImageView>
+                  <Button mnemonicParsing="false" onAction="#ouvrirPatients" prefHeight="54.0" prefWidth="121.0" style="-fx-background-color: #bfd9fb; -fx-text-fill: white; -fx-font-weight: bold;" text="Mes Patients">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Button>
+                  <Button fx:id="traitementsButton" mnemonicParsing="false" onAction="#ouvrirTraitements" prefHeight="54.0" prefWidth="142.0" style="-fx-background-color: white; -fx-text-fill: rgb(36, 36, 219); -fx-font-weight: bold;" text="Mes Traitements" textFill="#0b8eeb">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="rdvButton" mnemonicParsing="false" onAction="#ouvrirRendezVous" prefHeight="54.0" prefWidth="147.0" style="-fx-background-color: white; -fx-text-fill: rgb(36, 36, 219); -fx-font-weight: bold;" text="Mes Rendez-Vous" textFill="#378ac9">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="staticon1" mnemonicParsing="false" onAction="#ouvrirStatistiques" prefHeight="58.0" prefWidth="82.0" style="-fx-background-color: white;">
+                     <graphic>
+                        <ImageView accessibleRole="BUTTON" fitHeight="54.0" fitWidth="45.0" onMouseClicked="#ouvrirStatistiques" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/statistique.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="buttoncompt1" mnemonicParsing="false" onAction="#handleCompteClick" prefHeight="59.0" prefWidth="96.0" style="-fx-background-color: white;">
+                     <graphic>
+                        <ImageView fx:id="connexicon1" accessibleRole="BUTTON" fitHeight="40.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/profile.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="tablePatients" layoutX="8.0" layoutY="154.0" prefHeight="230.0" prefWidth="700.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="154.0">
+               <columns>
+                  <TableColumn fx:id="colID" prefWidth="50.0" style="-fx-alignment: center;" text="Id" />
+                  <TableColumn fx:id="colNom" prefWidth="88.0" style="-fx-alignment: center;" text="Nom" />
+                  <TableColumn fx:id="colPrenom" prefWidth="125.0" style="-fx-alignment: center;" text="Prenom" />
+                  <TableColumn fx:id="colDate" prefWidth="162.0" style="-fx-alignment: center;" text="Date Naissance " />
+                  <TableColumn fx:id="colSexe" prefWidth="113.0" style="-fx-alignment: center;" text="Sexe" />
+                  <TableColumn fx:id="colActions" prefWidth="155.0" style="-fx-alignment: center;" text="Options" />
+               </columns>
+            
+            </TableView>
+            <AnchorPane id="buttonStat" fx:id="buttonStat" layoutX="14.0" layoutY="85.0" prefHeight="63.0" prefWidth="675.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="2.0">
+               <children>
+                  <TextField fx:id="searchField" layoutX="14.0" layoutY="17.0" prefHeight="30.0" prefWidth="273.0" promptText="Chercher" style="-fx-background-radius: 20;" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="addIcon" layoutX="600.0" layoutY="406.0" mnemonicParsing="false" style="-fx-background-color: rgb(4, 138, 240);" text="Ajouter Patient" textFill="WHITE" AnchorPane.rightAnchor="8.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

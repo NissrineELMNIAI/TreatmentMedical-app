@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="400.0" spacing="10" style="-fx-background-color: #f0f8ff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.traitementVisualiserController">
+
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+   <children>
+   
+       <Label style="-fx-font-weight: bold; -fx-font-size: 18;" text="Détails du Traitement">
+           <font>
+               <Font name="System Bold" size="18.0" />
+           </font>
+       </Label>
+   
+   <VBox fx:id="detailsContainer" spacing="8" style="-fx-padding: 15;">
+      <children>
+              <Label fx:id="labelParagraphe" style="-fx-font-size: 14px; -fx-text-fill: #333;" wrapText="true" />
+      </children>
+       </VBox>
+   </children>
+</VBox>

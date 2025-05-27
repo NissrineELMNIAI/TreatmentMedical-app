@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/Main/main.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/model/DAOpatient.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/model/DAOrendezvous.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/model/RendezVous.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/PatientAjouterController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/PatientController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/rendezVousController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/model/Patient.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/PatientVisualiserController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/RendezVousModifierController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/RendezVousVisualiserController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/PatientModifierController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/RendezVousAjouterController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/patientView.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/rendezVousView.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/patientVisualiser.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/accueilController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/acceuilView.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/rendezVousAjouter.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/RendezVousVisualiser.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/AjouterCompte.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/ModifierRendezVous.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/model/DAOtraitement.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/ParametresController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/ProfilController.java</file>
+        </group>
+    </open-files>
+</project-private>
