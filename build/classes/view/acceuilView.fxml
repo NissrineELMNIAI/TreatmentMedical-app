@@ -10,11 +10,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: rgb(191, 217, 251);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.accueilController">
    <children>
-      <Label layoutX="284.0" layoutY="94.0" prefHeight="44.0" prefWidth="162.0" style="-fx-font-style: italic;" text="Bienvenue dans :" textAlignment="CENTER" textFill="#378ac9" textOverrun="LEADING_ELLIPSIS">
+      <Label layoutX="295.0" layoutY="91.0" prefHeight="44.0" prefWidth="115.0" style="-fx-font-style: italic;" text="Bienvenue dans :" textAlignment="CENTER" textFill="#378ac9" textOverrun="LEADING_ELLIPSIS">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label layoutX="97.0" layoutY="341.0" prefHeight="44.0" prefWidth="465.0" style="-fx-font-style: italic;" text="MemoPharma vous permet de gérer le suivi de traitements médicaux de vos patients " textFill="#378ac9">
+      <Label layoutX="120.0" layoutY="342.0" prefHeight="44.0" prefWidth="465.0" style="-fx-font-style: italic;" text="MemoPharma vous permet de gérer le suivi de traitements médicaux de vos patients " textFill="#378ac9">
          <font>
             <Font size="14.0" />
          </font></Label>
@@ -40,18 +40,18 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="staticon" mnemonicParsing="false" onAction="#ouvrirStatistiques" prefHeight="50.0" prefWidth="82.0" style="-fx-background-color: white;">
+            <Button fx:id="staticon" mnemonicParsing="false" onAction="#ouvrirStatistiques" prefHeight="50.0" prefWidth="101.0" style="-fx-background-color: white;">
                <graphic>
-                  <ImageView accessibleRole="BUTTON" fitHeight="54.0" fitWidth="45.0" onMouseClicked="#ouvrirStatistiques" pickOnBounds="true" preserveRatio="true">
+                  <ImageView accessibleRole="BUTTON" fitHeight="39.0" fitWidth="64.0" onMouseClicked="#ouvrirStatistiques" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../icons/statistique.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="buttoncompt" mnemonicParsing="false" onAction="#handleCompteClick" prefHeight="50.0" prefWidth="96.0" style="-fx-background-color: white;">
+            <Button fx:id="buttoncompt" mnemonicParsing="false" onAction="#handleCompteClick" prefHeight="50.0" prefWidth="74.0" style="-fx-background-color: white;">
                <graphic>
-                  <ImageView fx:id="connexicon" accessibleRole="BUTTON" fitHeight="40.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="connexicon" accessibleRole="BUTTON" fitHeight="37.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../icons/profile.png" />
                      </image>
@@ -60,7 +60,7 @@
             </Button>
          </children>
       </HBox>
-      <ImageView fitHeight="304.0" fitWidth="333.0" layoutX="176.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="304.0" fitWidth="333.0" layoutX="199.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/sansBackground.png" />
          </image>

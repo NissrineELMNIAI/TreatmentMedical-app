@@ -1,6 +1,5 @@
 
 package model;
-
 public class traitement {
     private int id;
     private String nom;

@@ -107,4 +107,27 @@ public class DAOtraitement {
             System.err.println("Erreur lors de la fermeture de la connexion: " + e.getMessage());
         }
     }
+  public List<traitement> getAllTraitementsWithType() {
+    List<traitement> traitements = new ArrayList<>();
+    String query = "SELECT id, nom, prix, foisParJour, type, duree FROM traitement";
+
+    try (Statement stmt = connection.createStatement();
+         ResultSet rs = stmt.executeQuery(query)) {
+
+        while (rs.next()) {
+            traitements.add(new traitement(
+                rs.getInt("id"),
+                rs.getString("nom"),
+                rs.getDouble("prix"),
+                rs.getInt("foisParJour"),
+                rs.getString("type"),
+                rs.getString("duree")
+            ));
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+        return traitements;
+  }
+
 }

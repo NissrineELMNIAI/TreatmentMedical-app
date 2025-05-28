@@ -47,22 +47,6 @@ public class accueilController {
 private Button staticon;
 
 @FXML
-
-private void ouvrirStatistiques(ActionEvent event) {
-    try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/statique.fxml")); // chemin correct
-        Parent root = loader.load();
-
-        Stage stage = new Stage();
-        stage.setTitle("Statistiques des patients");
-        stage.setScene(new Scene(root));
-        stage.show();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-}
-
-@FXML
 private void handleCompteClick(ActionEvent event) {
     try {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/compte.fxml"));
@@ -72,6 +56,19 @@ private void handleCompteClick(ActionEvent event) {
         stage.setTitle("Profil Utilisateur");
         stage.setScene(new Scene(root));
         stage.initModality(Modality.APPLICATION_MODAL);
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+@FXML
+private void ouvrirStatistiques(ActionEvent event) {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/statistiqueView.fxml"));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.setTitle("Statistiques");
+        stage.setScene(new Scene(root));
         stage.show();
     } catch (IOException e) {
         e.printStackTrace();

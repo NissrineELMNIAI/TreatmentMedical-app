@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #bfd9fb;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StatistiquesController">
+   <children>
+      <HBox prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Statistiques" style="-fx-font-weight: bold; -fx-font-size: 18; -fx-text-fill: #378ac9;" />
+         </children>
+      </HBox>
+      
+      <TabPane layoutY="50.0" prefHeight="450.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Patients">
+               <content>
+                  <VBox spacing="10">
+                     <HBox spacing="10" alignment="CENTER">
+                        <Label text="Total Patients: " style="-fx-font-weight: bold;"/>
+                        <Label fx:id="totalPatientsLabel" style="-fx-font-weight: bold; -fx-text-fill: #378ac9;"/>
+                     </HBox>
+                     <PieChart fx:id="patientsSexeChart" title="Répartition par sexe" legendVisible="true" />
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Traitements">
+               <content>
+                  <VBox spacing="10">
+                     <HBox spacing="10" alignment="CENTER">
+                        <Label text="Total Traitements: " style="-fx-font-weight: bold;"/>
+                        <Label fx:id="totalTraitementsLabel" style="-fx-font-weight: bold; -fx-text-fill: #378ac9;"/>
+                     </HBox>
+                     <PieChart fx:id="traitementsTypeChart" title="Répartition par type" legendVisible="true" />
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Rendez-vous">
+               <content>
+                  <VBox spacing="10">
+                     <HBox spacing="10" alignment="CENTER">
+                        <Label text="Total Rendez-vous: " style="-fx-font-weight: bold;"/>
+                        <Label fx:id="totalRdvLabel" style="-fx-font-weight: bold; -fx-text-fill: #378ac9;"/>
+                     </HBox>
+                     <BarChart fx:id="rdvMoisChart" title="Rendez-vous par mois" legendVisible="false">
+                        <xAxis>
+                           <CategoryAxis label="Mois" />
+                        </xAxis>
+                        <yAxis>
+                           <NumberAxis label="Nombre" />
+                        </yAxis>
+                     </BarChart>
+                  </VBox>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

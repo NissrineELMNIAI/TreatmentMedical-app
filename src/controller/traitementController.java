@@ -20,6 +20,13 @@ import model.DAOtraitement;
 import model.traitement;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.input.MouseEvent;
 
@@ -39,7 +46,6 @@ public class traitementController {
     private final DAOtraitement traitementDAO = new DAOtraitement();
     private ObservableList<traitement> traitementsList;
     private FilteredList<traitement> filteredTraitementsList;
-    
 
     @FXML
     public void initialize() {
@@ -49,6 +55,19 @@ public class traitementController {
 
         addIcon.setOnAction(e -> openTraitementWindow(null, "/view/traitementAjouter.fxml", "Ajouter Traitement"));
     }
+    @FXML
+private void ouvrirStatistiques(ActionEvent event) {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/statistiqueView.fxml"));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.setTitle("Statistiques");
+        stage.setScene(new Scene(root));
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
 public void refreshTable() {
     loadTraitements(); // Cette méthode doit déjà exister
 }
@@ -147,37 +166,32 @@ public void refreshTable() {
         });
     }
 
- @FXML
- private void openTraitementWindow(traitement traitement, String fxmlPath, String title) {
+  private void openTraitementWindow(traitement traitement, String fxmlPath, String title) {
     try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
         Parent root = loader.load();
-
         Object controller = loader.getController();
-
-        // Injection du traitement s’il y en a
-        if (controller instanceof traitementModifierController && traitement != null) {
-            ((traitementModifierController) controller).setTraitement(traitement);
-        } else if (controller instanceof traitementAjouterController) {
-            ((traitementAjouterController) controller).setParentController(this); // ← important pour refresh
-        }
+        //controller.setTraitement(traitementSelectionne);
+             // Passer la référence au contrôleur parent
+        if (controller instanceof traitementVisualiserController && traitement != null) {
+                ((traitementVisualiserController) controller).setTraitement(traitement);
+            } else if (controller instanceof traitementModifierController && traitement != null) {
+                ((traitementModifierController) controller).setTraitement(traitement);
+            }
+   
+       
 
         Stage stage = new Stage();
         stage.setTitle(title);
         stage.setScene(new Scene(root));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.showAndWait();
-
-        // Rafraîchir la table après fermeture
-        refreshTable();
-
+        
+        refreshTable(); // Rafraîchir après fermeture
     } catch (IOException e) {
-        e.printStackTrace();
-        showError("Erreur", "Impossible de charger la fenêtre : " + e.getMessage());
+        showError("Erreur", "Impossible d'ouvrir la fenêtre: " + e.getMessage());
     }
 }
-
-
 
     private ImageView getIcon(String path) {
         ImageView icon = new ImageView(new Image(getClass().getResourceAsStream(path)));
@@ -245,5 +259,18 @@ private void modifierTraitement(traitement traitement) {
         e.printStackTrace();
     }
 }
+@FXML private void handleCompteClick(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/compte.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Profil Utilisateur");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

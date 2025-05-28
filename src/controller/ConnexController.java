@@ -13,41 +13,33 @@ import java.io.IOException;
 
 public class ConnexController {
 
-    @FXML
-    private TextField utilisateurField;
-
-    @FXML
-    private PasswordField motDePasseField;
-
-    @FXML
-    private Button boutonSeConnecter;
-
-    @FXML
-    private Label creerCompteLabel;
+    @FXML private TextField emailField;
+    @FXML private PasswordField motDePasseField;
+    @FXML private Button boutonSeConnecter;
+    @FXML private Label creerCompteLabel;
 
     private UtilisateurDAO utilisateurDAO = new UtilisateurDAO();
 
     @FXML
     public void initialize() {
-        creerCompteLabel.setOnMouseClicked(event -> redirigerVersCreationCompte(event));
+        creerCompteLabel.setOnMouseClicked(this::redirigerVersCreationCompte);
         boutonSeConnecter.setOnAction(event -> seConnecter());
     }
-    @FXML
+
     private void seConnecter() {
-        String utilisateur = utilisateurField.getText().trim();
+        String email = emailField.getText().trim();
         String motDePasse = motDePasseField.getText();
 
-        if (utilisateur.isEmpty() || motDePasse.isEmpty()) {
+        if (email.isEmpty() || motDePasse.isEmpty()) {
             afficherAlerte("Erreur", "Veuillez remplir tous les champs", Alert.AlertType.ERROR);
             return;
         }
 
-        boolean authentifie = utilisateurDAO.verifierUtilisateur(utilisateur, motDePasse);
+        boolean authentifie = utilisateurDAO.verifierUtilisateurParEmail(email, motDePasse);
         if (authentifie) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/acceuilView.fxml"));
                 Parent root = loader.load();
-
                 Stage stage = (Stage) boutonSeConnecter.getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.setTitle("Accueil");
@@ -57,7 +49,7 @@ public class ConnexController {
                 e.printStackTrace();
             }
         } else {
-            afficherAlerte("Échec de la connexion", "Nom d'utilisateur ou mot de passe incorrect", Alert.AlertType.ERROR);
+            afficherAlerte("Échec de la connexion", "Email ou mot de passe incorrect", Alert.AlertType.ERROR);
         }
     }
 

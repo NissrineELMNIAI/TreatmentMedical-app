@@ -22,7 +22,9 @@ public class PatientAjouterController {
 
     @FXML
     public void initialize() {
-        comboSexe.getItems().addAll("Masculin", "Féminin");
+        comboSexe.getItems().addAll("--Choisissez votre sexe--", "Masculin", "Féminin");
+        comboSexe.setValue("--Choisissez votre sexe--"); // Définit Masculin comme valeur par défaut
+
     }
 
     public void setPatient(Patient p) {

@@ -1,0 +1,16 @@
+/* Style pour l'en-tête du tableau */
+.table-view .column-header {
+    -fx-background-color:  #75a4f0; /* Gris clair pour l'en-tête */
+    -fx-font-weight: bold;
+}
+
+/* Style pour les lignes impaires */
+.table-row-cell:odd {
+    -fx-background-color: #c5d5f0; 
+}
+
+/* Style pour les lignes paires */
+.table-row-cell:even {
+    -fx-background-color: white; 
+}
+

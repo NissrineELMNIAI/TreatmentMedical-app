@@ -1,16 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane prefHeight="300" prefWidth="400" style="-fx-background-color: #f0f8ff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RendezVousModifierController">
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="360.0" prefWidth="400" style="-fx-background-color: rgb(191, 217, 251);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RendezVousModifierController">
     <children>
-        <Label layoutX="30" layoutY="30" text="Date :" />
-        <DatePicker fx:id="datePicker" layoutX="120" layoutY="26" prefWidth="200" />
-        <Label layoutX="30" layoutY="70" text="Heure :" />
-        <ComboBox fx:id="comboHeure" layoutX="120" layoutY="66" prefWidth="200" />
-        <Label layoutX="30" layoutY="110" text="Objet :" />
-        <TextField fx:id="textFieldObjet" layoutX="120" layoutY="106" prefWidth="200" />
-        <Button fx:id="btnSave" layoutX="120" layoutY="210" mnemonicParsing="false" onAction="#handleSave" text="Enregistrer" />
-        <Button fx:id="btnCancel" layoutX="230" layoutY="210" mnemonicParsing="false" onAction="#handleCancel" text="Annuler" />
+        <Label layoutX="33.0" layoutY="70.0" text="Date :" textFill="#378ac9">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+        <DatePicker fx:id="datePicker" layoutX="120" layoutY="66.0" prefWidth="200" />
+        <Label layoutX="30.0" layoutY="110.0" text="Heure :" textFill="#378ac9">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+        <ComboBox fx:id="comboHeure" layoutX="120" layoutY="106.0" prefWidth="200" style="-fx-background-radius: 20; -fx-background-color: white;" />
+        <Label layoutX="31.0" layoutY="159.0" text="Objet :" textFill="#378ac9">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+        <TextField fx:id="textFieldObjet" layoutX="120.0" layoutY="155.0" prefWidth="200" style="-fx-background-radius: 20;" />
+        <Button fx:id="btnSave" layoutX="280.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #378ac9;" text="Enregistrer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+        <Button fx:id="btnCancel" layoutX="189.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #378ac9;" text="Annuler" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
     </children>
 </AnchorPane>
-

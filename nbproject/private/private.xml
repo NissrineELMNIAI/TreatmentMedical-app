@@ -22,12 +22,29 @@
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/accueilController.java</file>
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/acceuilView.fxml</file>
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/rendezVousAjouter.fxml</file>
-            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/RendezVousVisualiser.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/rendezVousVisualiser.fxml</file>
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/AjouterCompte.fxml</file>
-            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/ModifierRendezVous.fxml</file>
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/model/DAOtraitement.java</file>
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/ParametresController.java</file>
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/ProfilController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/traitementModifierController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/traitementVisualiserController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/traitementVisualiser.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/traitementController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/treatmentView.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/model/traitement.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/creerComptController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/compteController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/compte.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/model/Utilisateur.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/model/UtilisateurDAO.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/connexionView.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/ConnexController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/creerCompt.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/AjouterCompteController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/patientAjouter.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/styles/tableViewStyle.css</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/StatistiquesController.java</file>
         </group>
     </open-files>
 </project-private>

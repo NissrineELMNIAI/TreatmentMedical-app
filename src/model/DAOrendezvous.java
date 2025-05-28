@@ -109,4 +109,25 @@ public class DAOrendezvous {
             return false;
         }
     }
+    public List<RendezVous> getAllRendezVousWithDate() {
+    List<RendezVous> rendezVousList = new ArrayList<>();
+    String query = "SELECT id, date, heure, object FROM rendezvous";
+
+    try (Statement stmt = connection.createStatement();
+         ResultSet rs = stmt.executeQuery(query)) {
+
+        while (rs.next()) {
+            int id = rs.getInt("id");
+            LocalDate date = rs.getDate("date").toLocalDate();
+            LocalTime heure = rs.getTime("heure").toLocalTime();
+            String objet = rs.getString("object");
+
+            rendezVousList.add(new RendezVous(id, date, heure, objet));
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return rendezVousList;
+}
 }

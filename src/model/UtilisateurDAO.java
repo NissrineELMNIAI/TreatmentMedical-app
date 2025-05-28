@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 import java.sql.*;
 
 public class UtilisateurDAO {
-    private static final String URL = "jdbc:mysql://localhost:3306/compt_db";
+    private static final String URL = "jdbc:mysql://localhost:3306/treatmentmedical_db";
     private static final String USER = "root";
     private static final String PASS = "";
 
@@ -28,20 +28,18 @@ public class UtilisateurDAO {
         }
     }
 
-    public boolean verifierUtilisateur(String username, String password) {
-        String sql = "SELECT password FROM utilisateurs WHERE username = ?";
-        try (Connection conn = getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, username);
+    public boolean verifierUtilisateurParEmail(String email, String motDePasse) {
+        String hashed = hashPassword(motDePasse); // Corrigé : hash avant comparaison
+        String sql = "SELECT * FROM utilisateurs WHERE email = ? AND password = ?";
+        try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, email);
+            stmt.setString(2, hashed);
             ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                String storedHash = rs.getString("password");
-                return storedHash.equals(hashPassword(password));
-            }
+            return rs.next();
         } catch (SQLException e) {
-            System.out.println("Erreur : " + e.getMessage());
+            e.printStackTrace();
+            return false;
         }
-        return false;
     }
 
     private String hashPassword(String password) {

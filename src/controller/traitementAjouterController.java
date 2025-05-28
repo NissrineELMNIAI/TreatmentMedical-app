@@ -14,6 +14,8 @@ public class traitementAjouterController {
     @FXML private TextField txtType;
     @FXML private TextField txtDuree;
     @FXML private Button btnAjouter;
+    @FXML
+    private Button btnCancel;
     
     private final DAOtraitement daoTraitement = new DAOtraitement();
     private traitementController parentController;
@@ -96,5 +98,17 @@ public class traitementAjouterController {
         Stage stage = (Stage) btnAjouter.getScene().getWindow();
         stage.close();
     }
+@FXML
+    private void handleCancel() {
+        closeWindow();
+    }
+    
 
+    private void showAlert(Alert.AlertType type, String title, String message) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
 }

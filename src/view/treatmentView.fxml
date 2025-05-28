@@ -10,33 +10,33 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.traitementController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.traitementController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="624.0" style="-fx-background-color: #bfd9fb;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="400.0" prefWidth="710.0" style="-fx-background-color: #bfd9fb;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox prefHeight="44.0" prefWidth="700.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <HBox prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <ImageView fx:id="logo" accessibleRole="BUTTON" fitHeight="54.0" fitWidth="172.0" onMouseClicked="#ouvrirAccueil" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../icons/memoPharma1.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" onAction="#ouvrirPatients" prefHeight="54.0" prefWidth="121.0" style="-fx-background-color: white; -fx-text-fill: blue;" text="Mes Patients" textFill="#378ac9">
+                  <Button mnemonicParsing="false" onAction="#ouvrirPatients" prefHeight="54.0" prefWidth="122.0" style="-fx-background-color: white; -fx-text-fill: #378ac9;" text="Mes Patients" textFill="#378ac9">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="traitementsButton" mnemonicParsing="false" onAction="#ouvrirTraitements" prefHeight="54.0" prefWidth="142.0" style="-fx-background-color: #bfd9fb; -fx-text-fill: rgb(36, 36, 219);" text="Mes Traitements" textFill="#0b8eeb">
+                  <Button fx:id="traitementsButton" mnemonicParsing="false" onAction="#ouvrirTraitements" prefHeight="54.0" prefWidth="142.0" style="-fx-background-color: #bfd9fb; -fx-text-fill: white;" text="Mes Traitements" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="rdvButton" mnemonicParsing="false" onAction="#ouvrirRendezVous" prefHeight="54.0" prefWidth="147.0" style="-fx-background-color: white; -fx-text-fill: rgb(36, 36, 219);" text="Mes Rendez-Vous" textFill="#378ac9">
+                  <Button fx:id="rdvButton" mnemonicParsing="false" onAction="#ouvrirRendezVous" prefHeight="54.0" prefWidth="147.0" style="-fx-background-color: white; -fx-text-fill: #378ac9;" text="Mes Rendez-Vous" textFill="#378ac9">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: transparent;">
+                  <Button fx:id="btnStat" mnemonicParsing="false" onAction="#ouvrirStatistiques" prefHeight="54.0" prefWidth="88.0" style="-fx-background-color: transparent;">
                      <graphic>
                         <ImageView fx:id="staticon" accessibleRole="BUTTON" fitHeight="54.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -45,7 +45,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="64.0" style="-fx-background-color: transparent;">
+                  <Button mnemonicParsing="false" onAction="#handleCompteClick" prefHeight="54.0" prefWidth="80.0" style="-fx-background-color: transparent;">
                      <graphic>
                         <ImageView fx:id="connexicon" accessibleRole="BUTTON" fitHeight="41.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -56,23 +56,31 @@
                   </Button>
                </children>
             </HBox>
-            <TableView fx:id="tableTraitements" layoutX="8.0" layoutY="154.0" prefHeight="230.0" prefWidth="700.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="154.0">
+            <TableView fx:id="tableTraitements" layoutX="8.0" layoutY="126.0" prefHeight="270.0" prefWidth="694.0" style="-fx-background-color: rgb(191, 217, 251);" styleClass="custom-table" stylesheets="@../styles/tableViewStyle.css" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="126.0">
                <columns>
-                  <TableColumn fx:id="colID" prefWidth="68.0" style="-fx-alignment: center;" text="Id" />
-                  <TableColumn fx:id="colNom" prefWidth="81.0" style="-fx-alignment: center;" text="Nom" />
-                  <TableColumn fx:id="colPrix" prefWidth="76.0" style="-fx-alignment: center;" text="Prix" />
-                  <TableColumn fx:id="colFoisParJour" prefWidth="102.40000915527344" style="-fx-alignment: center;" text="Fois par jour" />
-                  <TableColumn fx:id="colType" prefWidth="79.20001220703125" style="-fx-alignment: center;" text="Type" />
-                  <TableColumn fx:id="colDuree" prefWidth="104.79998779296875" style="-fx-alignment: center;" text="Duree" />
-                  <TableColumn fx:id="colActions" prefWidth="128.79998779296875" text="Options" />
+                  <TableColumn fx:id="colID" prefWidth="54.39999485015869" style="-fx-alignment: center; -fx-border-color: rgb(191, 217, 251);" text="Id" />
+                  <TableColumn fx:id="colNom" prefWidth="111.20000839233398" style="-fx-alignment: center; -fx-border-color: rgb(191, 217, 251);" text="Nom" />
+                  <TableColumn fx:id="colPrix" prefWidth="76.79998779296875" style="-fx-alignment: center; -fx-border-color: rgb(191, 217, 251);" text="Prix" />
+                  <TableColumn fx:id="colFoisParJour" prefWidth="87.20002746582031" style="-fx-alignment: center; -fx-border-color: rgb(191, 217, 251);" text="Fois par jour" />
+                  <TableColumn fx:id="colType" prefWidth="111.20001220703125" style="-fx-alignment: center; -fx-border-color: rgb(191, 217, 251);" text="Type" />
+                  <TableColumn fx:id="colDuree" prefWidth="97.5999755859375" style="-fx-alignment: center; -fx-border-color: rgb(191, 217, 251);" text="Duree" />
+                  <TableColumn fx:id="colActions" prefWidth="160.0" style="-fx-border-color: rgb(191, 217, 251);" text="Options" />
                </columns>
             </TableView>
-            <AnchorPane layoutX="14.0" layoutY="85.0" prefHeight="63.0" prefWidth="675.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="2.0">
+            <AnchorPane layoutX="14.0" layoutY="63.0" prefHeight="63.0" prefWidth="675.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="2.0">
                <children>
-                  <TextField fx:id="searchField" layoutX="14.0" layoutY="17.0" prefHeight="30.0" prefWidth="273.0" promptText="Chercher" style="-fx-background-radius: 20;" />
+                  <TextField fx:id="searchField" layoutX="14.0" layoutY="16.0" prefHeight="30.0" prefWidth="491.0" promptText="Chercher" style="-fx-background-radius: 20;" />
+                  <ImageView fitHeight="26.0" fitWidth="19.0" layoutX="479.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/search.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
-            <Button fx:id="addIcon" layoutX="533.0" layoutY="328.0" mnemonicParsing="false" style="-fx-background-color: rgb(4, 138, 240);" text="Ajouter Traitement" textFill="WHITE" AnchorPane.rightAnchor="8.0" />
+            <Button fx:id="addIcon" layoutX="580.0" layoutY="406.0" mnemonicParsing="false" style="-fx-background-color: #378ac9;" text="Ajouter Traitement" textFill="WHITE" AnchorPane.rightAnchor="8.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
          </children>
       </AnchorPane>
    </children>

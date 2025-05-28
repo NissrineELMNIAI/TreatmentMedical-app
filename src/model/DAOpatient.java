@@ -4,6 +4,7 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class DAOpatient {
 
@@ -20,6 +21,29 @@ public class DAOpatient {
             e.printStackTrace();
         }
     }
+public List<Patient> getAllPatientsWithSexe() {
+    List<Patient> patients = new ArrayList<>();
+    String query = "SELECT id, nom, prenom, date_naissance, sexe FROM patient";
+
+    try (Statement stmt = connection.createStatement();
+         ResultSet rs = stmt.executeQuery(query)) {
+
+        while (rs.next()) {
+            int id = rs.getInt("id");
+            String nom = rs.getString("nom");
+            String prenom = rs.getString("prenom");
+            LocalDate dateNaiss = rs.getDate("date_naissance").toLocalDate();
+            String sexe = rs.getString("sexe");
+
+            patients.add(new Patient(id, nom, prenom, dateNaiss, sexe));
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return patients;
+}
+
+
 
     private boolean isConnected() {
         try {
@@ -113,7 +137,7 @@ public List<Patient> getAllPatients() {
             return false;
         }
     }
-    public static int getNombrePatientsParSexe(String sexe) {
+    public static int getAllPatientsParSexe(String sexe) {
     int count = 0;
     String query = "SELECT COUNT(*) FROM patient WHERE sexe = ?";
 
@@ -132,5 +156,6 @@ public List<Patient> getAllPatients() {
 
     return count;
 }
+
 
 }
