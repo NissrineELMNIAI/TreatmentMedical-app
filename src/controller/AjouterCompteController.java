@@ -15,6 +15,7 @@ public class AjouterCompteController {
     private UtilisateurDAO utilisateurDAO = new UtilisateurDAO();
 
     @FXML
+    // methode  ajouter compte
     private void handleAjouter() {
         String username = usernameField.getText();
         String email = emailField.getText();
@@ -36,6 +37,7 @@ public class AjouterCompteController {
     }
 
     @FXML
+   //methode pour annuler l ajoute de compte
     private void handleAnnuler() {
         Stage stage = (Stage) usernameField.getScene().getWindow();
         stage.close();

@@ -42,7 +42,7 @@ public class StatistiquesController {
         loadTraitementsStats();
         loadRdvStats();
     }
-
+//charger les statistiques des patients
 private void loadPatientsStats() {
     List<Patient> patients = patientDAO.getAllPatientsWithSexe();
     totalPatientsLabel.setText(String.valueOf(patients.size()));
@@ -63,7 +63,7 @@ private void loadPatientsStats() {
 }
 
 
-
+//charger statistiaue de traitement
 private void loadTraitementsStats() {
     List<traitement> traitements = traitementDAO.getAllTraitementsWithType();
     totalTraitementsLabel.setText(String.valueOf(traitements.size()));
@@ -84,8 +84,9 @@ private void loadTraitementsStats() {
 }
 
 
+//charger les statistiaues de rendez vous
     private void loadRdvStats() {
-        List<RendezVous> rdvs = rdvDAO.getAllRendezVous(); // <-- Utilise les objets RendezVous
+        List<RendezVous> rdvs = rdvDAO.getAllRendezVous();
         totalRdvLabel.setText(String.valueOf(rdvs.size()));
 
         // Compter par mois

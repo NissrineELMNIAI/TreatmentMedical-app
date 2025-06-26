@@ -5,19 +5,18 @@ import java.time.LocalTime;
 
 public class RendezVous {
 
-    private int id; // si tu gères un ID
+    private int id; 
     private LocalDate date;
     private LocalTime heure;
     private String objet;
 
-    // Constructeur utilisé pour ajouter un nouveau rendez-vous
+
     public RendezVous(LocalDate date, LocalTime heure, String objet) {
         this.date = date;
         this.heure = heure;
         this.objet = objet;
     }
 
-    // Constructeur complet si tu récupères depuis la base de données avec un ID
     public RendezVous(int id, LocalDate date, LocalTime heure, String objet) {
         this.id = id;
         this.date = date;

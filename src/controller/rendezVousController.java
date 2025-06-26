@@ -19,12 +19,13 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.DAOrendezvous;
 import model.RendezVous;
-
+import model.Session;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import model.Utilisateur;
 
 public class rendezVousController {
 
@@ -40,6 +41,12 @@ public class rendezVousController {
     private final DAOrendezvous rdvDAO = new DAOrendezvous();
     private ObservableList<RendezVous> rdvList;
     private FilteredList<RendezVous> filteredRdvList;
+    private Utilisateur utilisateur;
+
+public void setUtilisateur(Utilisateur utilisateur) {
+    this.utilisateur = utilisateur;
+}
+
     @FXML
 private void ouvrirStatistiques(ActionEvent event) {
     try {
@@ -47,6 +54,7 @@ private void ouvrirStatistiques(ActionEvent event) {
         Parent root = loader.load();
         Stage stage = new Stage();
         stage.setTitle("Statistiques");
+        stage.getIcons().add(new Image("/icons/sansBackground.png"));
         stage.setScene(new Scene(root));
         stage.show();
     } catch (IOException e) {
@@ -94,15 +102,15 @@ private void ouvrirStatistiques(ActionEvent event) {
             private final Button btnSupprimer = new Button();
 
             {
-                btnVisualiser.setGraphic(getIcon("/icons/eye.png"));
+                btnVisualiser.setGraphic(getIcon("/icons/1.png"));
                 btnVisualiser.setStyle("-fx-background-color: transparent; -fx-cursor: hand;");
                 btnVisualiser.setTooltip(new Tooltip("Visualiser"));
 
-                btnModifier.setGraphic(getIcon("/icons/edit.png"));
+                btnModifier.setGraphic(getIcon("/icons/2.png"));
                 btnModifier.setStyle("-fx-background-color: transparent; -fx-cursor: hand;");
                 btnModifier.setTooltip(new Tooltip("Modifier"));
 
-                btnSupprimer.setGraphic(getIcon("/icons/delete.png"));
+                btnSupprimer.setGraphic(getIcon("/icons/3.png"));
                 btnSupprimer.setStyle("-fx-background-color: transparent; -fx-cursor: hand;");
                 btnSupprimer.setTooltip(new Tooltip("Supprimer"));
 
@@ -218,44 +226,107 @@ private void ouvrirStatistiques(ActionEvent event) {
         stage.setScene(new Scene(root));
     }
 
-    @FXML private void ouvrirPatients(ActionEvent event) throws IOException {
-        switchView(event, "/view/patientView.fxml");
+   @FXML
+    private void ouvrirRendezVous(ActionEvent event) {
+            try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/rendezVousView.fxml"));
+        Parent root = loader.load();
+
+        // Transfert de l'utilisateur connecté
+        rendezVousController rendezVousController = loader.getController();
+        rendezVousController.setUtilisateur(utilisateur);
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Rendez-Vous - MemoPharma");
+        stage.show();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    }
+    
+     @FXML
+    private void ouvrirTraitements(ActionEvent event) {
+           try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/treatmentView.fxml"));
+        Parent root = loader.load();
+
+        // Transfert de l'utilisateur connecté
+       traitementController traitementController = loader.getController();
+        traitementController.setUtilisateur(utilisateur);
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Traitements - MemoPharma");
+        stage.show();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
     }
 
-    @FXML private void ouvrirTraitements(ActionEvent event) throws IOException {
-        switchView(event, "/view/treatmentView.fxml");
-    }
+    
+    @FXML
+private void ouvrirPatients(ActionEvent event) {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/patientView.fxml"));
+        Parent root = loader.load();
 
-    @FXML private void ouvrirRendezVous(ActionEvent event) throws IOException {
-        switchView(event, "/view/rendezVousView.fxml");
-    }
+        // Transfert de l'utilisateur connecté
+        PatientController patientController = loader.getController();
+        patientController.setUtilisateur(utilisateur);
 
-    @FXML private void ouvrirAccueil(MouseEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/accueilView.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Patients - MemoPharma");
+        stage.show();
 
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+    @FXML
+    private void ouvrirAcceuil(ActionEvent event) {
+           try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/acceuilView.fxml"));
+        Parent root = loader.load();
+
+        // Transfert de l'utilisateur connecté
+       accueilController accueilController = loader.getController();
+        accueilController.setUtilisateur(utilisateur);
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Acceuil - MemoPharma");
+        stage.show();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    }
     @FXML private Button staticon;
 
-    @FXML private void handleCompteClick(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/compte.fxml"));
-            Parent root = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Profil Utilisateur");
-            stage.setScene(new Scene(root));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    @FXML
+private void handleCompteClick(ActionEvent event) {
+    try {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/compte.fxml"));
+        Parent root = fxmlLoader.load();
+
+        // Transfert de l'utilisateur connecté via Session
+        compteController controller = fxmlLoader.getController();
+        controller.setUtilisateur(Session.getUtilisateur());
+
+        Stage stage = new Stage();
+        stage.setTitle("Profil Utilisateur");
+        stage.getIcons().add(new Image("/icons/sansBackground.png"));
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
     }
+}
     
 }

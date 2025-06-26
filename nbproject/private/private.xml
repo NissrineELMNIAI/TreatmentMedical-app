@@ -25,7 +25,6 @@
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/rendezVousVisualiser.fxml</file>
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/AjouterCompte.fxml</file>
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/model/DAOtraitement.java</file>
-            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/ParametresController.java</file>
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/ProfilController.java</file>
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/traitementModifierController.java</file>
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/traitementVisualiserController.java</file>
@@ -45,6 +44,15 @@
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/patientAjouter.fxml</file>
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/styles/tableViewStyle.css</file>
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/StatistiquesController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/traitementModifier.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/traitementAjouter.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/controller/traitementAjouterController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/model/Session.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/view/statistiqueView.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/icons/profile.png</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/icons/memoPharma_1.png</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/icons/memoPharma1.png</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/myProject/src/icons/memoPharma.png</file>
         </group>
     </open-files>
 </project-private>

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="400.0" style="-fx-background-color: rgb(191, 217, 251);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="400.0" style="-fx-background-color: rgb(191, 217, 251);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AjouterCompteController">
    <children>
       <Label layoutX="81.0" layoutY="44.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Ajouter un nouveau compte" textFill="#378ac9" />
       <TextField fx:id="usernameField" layoutX="80.0" layoutY="99.0" prefHeight="26.0" prefWidth="250.0" promptText="Nom d'utilisateur" style="-fx-background-radius: 20;" />
@@ -15,12 +15,12 @@
       <PasswordField fx:id="passwordField" layoutX="81.0" layoutY="195.0" prefWidth="250.0" promptText="Mot de passe" style="-fx-background-radius: 20;" />
       <AnchorPane layoutX="6.0" layoutY="235.0" prefHeight="48.0" prefWidth="335.0">
          <children>
-            <Button layoutX="281.0" layoutY="22.0" mnemonicParsing="false" style="-fx-background-color: #378ac9;" text="Ajouter" textFill="WHITE">
+            <Button layoutX="281.0" onAction="#handleAjouter" layoutY="22.0" mnemonicParsing="false" style="-fx-background-color: #378ac9;" text="Ajouter" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="200.0" layoutY="22.0" mnemonicParsing="false" style="-fx-background-color: #378ac9;" text="Annuler" textFill="WHITE">
+            <Button layoutX="200.0" onAction="#handleAnnuler" layoutY="22.0" mnemonicParsing="false" style="-fx-background-color: #378ac9;" text="Annuler" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>

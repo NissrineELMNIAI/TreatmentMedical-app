@@ -23,14 +23,13 @@ public class PatientAjouterController {
     @FXML
     public void initialize() {
         comboSexe.getItems().addAll("--Choisissez votre sexe--", "Masculin", "Féminin");
-        comboSexe.setValue("--Choisissez votre sexe--"); // Définit Masculin comme valeur par défaut
+        comboSexe.setValue("--Choisissez votre sexe--"); 
 
     }
-
+//permet de remplir les champs si un patient est passe pour modification 
     public void setPatient(Patient p) {
         this.patientToEdit = p;
         if (p != null) {
-            // Remplir le formulaire avec les infos du patient à modifier
             textFieldNom.setText(p.getNom());
             textFieldPrenom.setText(p.getPrenom());
             datePickerNaiss.setValue(p.getDateNaiss());
@@ -38,7 +37,7 @@ public class PatientAjouterController {
             btnAdd.setText("Modifier");
         }
     }
-
+//action sur le button ajouter
     @FXML
     private void handleAdd() {
         String nom = textFieldNom.getText().trim();
@@ -89,7 +88,7 @@ public class PatientAjouterController {
         Stage stage = (Stage) btnCancel.getScene().getWindow();
         stage.close();
     }
-
+//methode pour afficher une alerte 
     private void showAlert(Alert.AlertType type, String title, String msg) {
         Alert alert = new Alert(type);
         alert.setTitle(title);

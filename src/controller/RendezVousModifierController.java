@@ -17,8 +17,7 @@ public class RendezVousModifierController {
     private DatePicker datePicker;
 
     @FXML
-    private ComboBox<String> comboHeure; // ← à la place de TextField textFieldHeure
-// Format HH:mm
+    private ComboBox<String> comboHeure;
 
     @FXML
     private TextField textFieldObjet;
@@ -33,7 +32,7 @@ public class RendezVousModifierController {
     private final DAOrendezvous daoRendezVous = new DAOrendezvous();
 
     public void initialize() {
-        // Rien à initialiser ici pour l'instant
+     
     }
 
     public void setRendezVous(RendezVous rdv) {

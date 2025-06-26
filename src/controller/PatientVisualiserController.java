@@ -8,11 +8,6 @@ public class PatientVisualiserController {
 
     @FXML
     private Label labelInfo;
-
-    /**
-     * Initialise le Label avec les données du patient formatées.
-     * @param patient
-     */
   public void setPatient(Patient patient) {
     if (patient != null) {
         String sexe = patient.getSexe();

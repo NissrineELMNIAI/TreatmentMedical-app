@@ -1,5 +1,6 @@
 package controller;
 
+import com.sun.javafx.stage.StageHelper;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -7,10 +8,21 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.fxml.FXMLLoader;
+import model.Utilisateur;
+import javafx.stage.Modality;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import model.Session;
+//import utils.StageHelper;
+import javafx.stage.Window;
 
 public class compteController {
 
@@ -26,66 +38,111 @@ public class compteController {
     @FXML
     private Label welcomeLabel;
 
-    @FXML
-    private void initialize() {
-        // Exemple de données
-        nomLabel.setText("Lamyae Hamdaoui");
-        emailLabel.setText("lamyae.Hamdaoui@ump.com");
-        welcomeLabel.setText("Bienvenue sur votre espace personnel !");
+    private Utilisateur utilisateur;
 
-        // Image par défaut
-        Image profilImage = new Image(getClass().getResourceAsStream("/icons/imageDefaut.png"));
-        profileImageView.setImage(profilImage);
+    public void setUtilisateur(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
+        afficherInfosUtilisateur();
     }
 
     @FXML
-    private void handleModifierPhoto(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Choisir une photo de profil");
-        fileChooser.getExtensionFilters().addAll(
-            new FileChooser.ExtensionFilter("Images", "*.png", "*.jpg", "*.jpeg", "*.gif")
-        );
-        Stage stage = (Stage) profileImageView.getScene().getWindow();
-        File selectedFile = fileChooser.showOpenDialog(stage);
+    private void initialize() {
+        Image profilImage = new Image(getClass().getResourceAsStream("/icons/photoProfile.png"));
+        profileImageView.setImage(profilImage);
+    }
 
-        if (selectedFile != null) {
-            try {
-                Image newImage = new Image(new FileInputStream(selectedFile));
-                profileImageView.setImage(newImage);
-                welcomeLabel.setText("Photo mise à jour avec succès !");
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-                welcomeLabel.setText("Erreur lors du chargement de la photo.");
-            }
+    private void afficherInfosUtilisateur() {
+        if (utilisateur != null) {
+            nomLabel.setText(utilisateur.getUsername());
+            emailLabel.setText(utilisateur.getEmail());
+            welcomeLabel.setText("Bienvenue, " + utilisateur.getUsername() + " !");
         }
     }
 
     @FXML
-private void handleParametres(ActionEvent event) {
-    try {
-        javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/view/Parametres.fxml"));
-        javafx.scene.Parent root = loader.load();
-        Stage paramStage = new Stage();
-        paramStage.setTitle("Paramètres du compte");
-        paramStage.setScene(new javafx.scene.Scene(root));
-        paramStage.show();
-    } catch (Exception e) {
-        e.printStackTrace();
+private void handleModifierPhoto(ActionEvent event) {
+    FileChooser fileChooser = new FileChooser();
+    fileChooser.setTitle("Choisir une photo de profil");
+    fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Images", ".png", ".jpg", ".jpeg", ".gif"));
+    File file = fileChooser.showOpenDialog(profileImageView.getScene().getWindow());
+
+    if (file != null) {
+        try {
+            profileImageView.setImage(new Image(new FileInputStream(file)));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
 
 
+
+
+    // Méthode pour ouvrir une nouvelle fenêtre "Ajouter Compte"
     @FXML
     private void handleAjouterCompte(ActionEvent event) {
-        // Logique pour ajouter un autre compte
-        System.out.println("Ajouter un autre compte demandé !");
+        try {
+            // Charge le FXML de la nouvelle interface
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ajouterCompte.fxml"));
+            Parent root = loader.load();
+
+            // Crée une nouvelle scène et fenêtre (stage)
+            Stage stage = new Stage();
+            stage.setTitle("Ajouter un compte");
+            stage.setScene(new Scene(root));
+            // Bloque la fenêtre parente (modale)
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+           
+        }
     }
 
-    @FXML
-    private void handleDeconnexion(ActionEvent event) {
-        // Logique déconnexion, par ex fermer session et revenir à login
-        System.out.println("Déconnexion demandée !");
-        Stage stage = (Stage) nomLabel.getScene().getWindow();
-        stage.close();
+    // Méthode pour déconnexion et retour à l'interface de connexion
+@FXML
+private void handleDeconnexion(ActionEvent event) {
+    try {
+       
+        closeAllWindows();
+        Session.setUtilisateur(null);
+        showLoginWindow();
+        
+    } catch (IOException e) {
+        e.printStackTrace();
+        showAlert("Erreur", "Impossible d'ouvrir la fenêtre de connexion");
     }
+}
+
+private void closeAllWindows() {
+    // Fermer toutes les fenêtres sauf la fenêtre primaire (si elle existe)
+    for (Window window : Window.getWindows()) {
+        if (window instanceof Stage) {
+            Stage stage = (Stage) window;
+            if (!stage.isShowing()) continue;
+            stage.close();
+        }
+    }
+}
+
+private void showLoginWindow() throws IOException {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/connexionView.fxml"));
+    Parent root = loader.load();
+    
+    Stage loginStage = new Stage();
+    loginStage.setScene(new Scene(root));
+    loginStage.setTitle("Connexion");
+    loginStage.show();
+}
+
+private void showAlert(String title, String message) {
+    Alert alert = new Alert(Alert.AlertType.ERROR);
+    alert.setTitle(title);
+    alert.setHeaderText(null);
+    alert.setContentText(message);
+    alert.showAndWait();
+}
+
+
 }

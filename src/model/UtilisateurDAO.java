@@ -29,7 +29,7 @@ public class UtilisateurDAO {
     }
 
     public boolean verifierUtilisateurParEmail(String email, String motDePasse) {
-        String hashed = hashPassword(motDePasse); // Corrigé : hash avant comparaison
+        String hashed = hashPassword(motDePasse); 
         String sql = "SELECT * FROM utilisateurs WHERE email = ? AND password = ?";
         try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, email);
@@ -53,4 +53,28 @@ public class UtilisateurDAO {
             throw new RuntimeException("Erreur de hashage", e);
         }
     }
+    public Utilisateur getUtilisateurParEmail(String email) {
+    String sql = "SELECT * FROM utilisateurs WHERE email = ?";
+    try (Connection conn = getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+        stmt.setString(1, email);
+        ResultSet rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            Utilisateur utilisateur = new Utilisateur();
+            utilisateur.setId(rs.getInt("id")); // Assure-toi que ta classe Utilisateur a ces setters
+            utilisateur.setUsername(rs.getString("username"));
+            utilisateur.setEmail(rs.getString("email"));
+            utilisateur.setPassword(rs.getString("password")); // ou motDePasse selon ta classe
+            return utilisateur;
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return null;
+}
+
 }

@@ -16,11 +16,15 @@
          <children>
             <HBox prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <ImageView fx:id="logo" accessibleRole="BUTTON" fitHeight="54.0" fitWidth="172.0" onMouseClicked="#ouvrirAccueil" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icons/memoPharma1.png" />
-                     </image>
-                  </ImageView>
+                  <Button fx:id="acceuilButton" mnemonicParsing="false" onAction="#ouvrirAcceuil" prefHeight="60.0" prefWidth="118.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: rgb(191, 217, 251);">
+                           <image>
+                              <Image url="@../icons/sansBackground1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                   <Button fx:id="patientsButton" mnemonicParsing="false" onAction="#ouvrirPatients" prefHeight="54.0" prefWidth="126.0" style="-fx-background-color: white; -fx-text-fill: #378ac9;" text="Mes Patients" textFill="#378ac9">
                      <font>
                         <Font name="System Bold" size="14.0" />
@@ -47,7 +51,7 @@
                   </Button>
                   <Button fx:id="connexicon" mnemonicParsing="false" onAction="#handleCompteClick" prefHeight="54.0" prefWidth="80.0" style="-fx-background-color: transparent;">
                      <graphic>
-                        <ImageView fx:id="connexicon" accessibleRole="BUTTON" fitHeight="41.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="connexicon" accessibleRole="BUTTON" fitHeight="42.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/profile.png" />
                            </image>
@@ -79,7 +83,8 @@
             <Button fx:id="addIcon" layoutX="580.0" layoutY="406.0" mnemonicParsing="false" style="-fx-background-color: #378ac9;" text="Ajouter Rendez-Vous" textFill="WHITE" AnchorPane.rightAnchor="34.0">
                <font>
                   <Font name="System Bold" size="12.0" />
-               </font></Button>
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

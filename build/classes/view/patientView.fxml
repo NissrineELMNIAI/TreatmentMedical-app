@@ -16,11 +16,15 @@
          <children>
             <HBox prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <ImageView fx:id="logo" accessibleRole="BUTTON" fitHeight="54.0" fitWidth="172.0" onMouseClicked="#ouvrirAccueil" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icons/memoPharma1.png" />
-                     </image>
-                  </ImageView>
+                  <Button fx:id="acceuilButton" mnemonicParsing="false" onAction="#ouvrirAcceuil" prefHeight="52.0" prefWidth="118.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fx:id="logo" accessibleRole="BUTTON" fitHeight="47.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/memoPharma1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                   <Button mnemonicParsing="false" onAction="#ouvrirPatients" prefHeight="54.0" prefWidth="121.0" style="-fx-background-color: #bfd9fb; -fx-text-fill: white; -fx-font-weight: bold;" text="Mes Patients" textFill="#378ac9">
                      <font>
                         <Font name="System Bold" size="14.0" />

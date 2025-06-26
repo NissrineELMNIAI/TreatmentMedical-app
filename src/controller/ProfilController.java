@@ -15,14 +15,12 @@ public class ProfilController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Ces infos peuvent venir d’un utilisateur connecté
         nomLabel.setText("Nom : Lamyae");
         emailLabel.setText("Email : lamyae@example.com");
     }
 
     @FXML
     private void handleLogout(ActionEvent event) {
-        // Action de déconnexion ici
         System.out.println("Déconnexion...");
     }
 }

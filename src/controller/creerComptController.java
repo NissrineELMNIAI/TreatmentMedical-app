@@ -58,20 +58,26 @@ public class creerComptController {
         changerScene(event, "/view/connexionView.fxml");
     }
 
-    private void changerScene(ActionEvent event, String fxmlPath) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
-            Parent root = loader.load();
+  private void changerScene(ActionEvent event, String fxmlPath) {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+        Parent root = loader.load();
 
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root)); // remplacement propre de la scène
-            stage.show();
+        // Obtenir le stage actuel et le fermer après changement de scène
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root)); // Remplacement de la scène
+        stage.show();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-            showAlert("Erreur", "Impossible de charger la page demandée.");
-        }
+        // Fermer la fenêtre actuelle
+        stage.close();  
+
+    } catch (IOException e) {
+        e.printStackTrace();
+        showAlert("Erreur", "Impossible de charger la page demandée.");
     }
+}
+
+
 
     private void showAlert(String titre, String msg) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
