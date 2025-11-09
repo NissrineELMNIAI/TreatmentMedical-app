@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="360.0" prefWidth="400" style="-fx-background-color: rgb(191, 217, 251);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PatientAjouterController">
+    <children>
+        <Label layoutX="30.0" layoutY="70.0" text="Nom :" textFill="#378ac9">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+        <TextField fx:id="textFieldNom" layoutX="120.0" layoutY="66.0" prefWidth="200" style="-fx-background-radius: 20;" />
+
+        <Label layoutX="30.0" layoutY="110.0" text="Prénom :" textFill="#378ac9">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+        <TextField fx:id="textFieldPrenom" layoutX="120.0" layoutY="106.0" prefWidth="200" style="-fx-background-radius: 20;" />
+
+        <Label layoutX="27.0" layoutY="159.0" text="Date de naissance :" textFill="#378ac9">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+        <DatePicker fx:id="datePickerNaiss" layoutX="160.0" layoutY="155.0" prefWidth="160" style="-fx-background-radius: 20;" />
+
+        <Label layoutX="32.0" layoutY="200.0" text="Sexe :" textFill="#378ac9">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+        <ComboBox fx:id="comboSexe" layoutX="120.0" layoutY="196.0" prefWidth="200" style="-fx-background-radius: 20; -fx-background-color: white;" />
+
+        <Button fx:id="btnAdd" layoutX="278.0" layoutY="255.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="26.0" prefWidth="62.0" style="-fx-text-fill: white; -fx-background-color: #378ac9;" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+        <Button fx:id="btnCancel" layoutX="189.0" layoutY="255.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="26.0" prefWidth="62.0" style="-fx-text-fill: white; -fx-background-color: #378ac9;" text="Annuler">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+    </children>
+</AnchorPane>

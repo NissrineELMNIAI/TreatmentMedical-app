@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="360.0" prefWidth="400" style="-fx-background-color: rgb(191, 217, 251);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RendezVousAjouterController">
+    <children>
+        <Label layoutX="29.0" layoutY="70.0" text="Date :" textFill="#378ac9">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+        <DatePicker fx:id="datePicker" layoutX="120" layoutY="66.0" prefWidth="200" style="-fx-border-radius: 20;" />
+        <Label layoutX="29.0" layoutY="110.0" text="Heure :" textFill="#378ac9">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+        <ComboBox fx:id="comboHeure" layoutX="120" layoutY="106.0" prefWidth="200" style="-fx-background-radius: 20; -fx-background-color: white;" />
+        <Label layoutX="31.0" layoutY="159.0" text="Objet :" textFill="#378ac9">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+        <TextField fx:id="textFieldObjet" layoutX="120.0" layoutY="155.0" prefWidth="200" style="-fx-background-radius: 20;" />
+        <Button fx:id="btnAdd" layoutX="276.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #378ac9;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+        <Button fx:id="btnCancel" layoutX="200.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleCancel" style="-fx-background-color: #378ac9;" text="Annuler" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+    </children>
+</AnchorPane>

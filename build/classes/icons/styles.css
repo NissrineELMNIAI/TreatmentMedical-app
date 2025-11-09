@@ -1,0 +1,70 @@
+/* Style global */
+.root {
+    -fx-background-color: #e1f4fc;
+    -fx-padding: 20px;
+    -fx-font-family: 'Arial';
+}
+
+/* Barre de menu */
+.menu-bar {
+    -fx-spacing: 20px;
+    -fx-padding: 10px 0;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 1px 0;
+    -fx-alignment: CENTER;
+}
+
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #555;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-padding: 5px 10px;
+}
+
+.menu-button:hover {
+    -fx-text-fill: #3498db;
+}
+
+/* Formulaire */
+.form-container {
+    -fx-spacing: 15px;
+    -fx-padding: 20px;
+    -fx-max-width: 300px;
+}
+
+.field-label {
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.text-field, .password-field {
+    -fx-pref-width: 250px;
+    -fx-padding: 8px;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 4px;
+}
+
+/* Boutons */
+.button-container {
+    -fx-padding: 10px 0;
+}
+
+.primary-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-padding: 8px 16px;
+}
+
+.secondary-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3498db;
+    -fx-underline: true;
+    -fx-padding: 8px 16px;
+}
+
+.hint-label {
+    -fx-text-fill: #777;
+    -fx-font-size: 12px;
+}

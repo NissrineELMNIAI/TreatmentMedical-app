@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400" prefWidth="400" style="-fx-background-color: rgb(191, 217, 251);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.creerComptController">
+
+    <children>
+
+        <Label layoutX="100.0" layoutY="23.0" prefHeight="32.0" prefWidth="203.0" style="-fx-font-weight: bold;" text="Créer votre compte" textFill="#378ac9">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+
+        <TextField fx:id="usernameField" layoutX="52.0" layoutY="75.0" prefHeight="30.0" prefWidth="300.0" promptText="Nom d'utilisateur" style="-fx-background-radius: 20;" />
+
+        <TextField fx:id="emailField" layoutX="51.0" layoutY="125.0" prefHeight="30.0" prefWidth="300.0" promptText="Email" style="-fx-background-radius: 20;" />
+
+        <PasswordField fx:id="passwordField" layoutX="52.0" layoutY="175.0" prefHeight="30.0" prefWidth="300.0" promptText="Mot de passe" style="-fx-background-radius: 20;" />
+
+        <PasswordField fx:id="confirmPasswordField" layoutX="50.0" layoutY="224.0" prefHeight="30.0" prefWidth="300.0" promptText="Confirmer mot de passe" style="-fx-background-radius: 20;" />
+
+        <Button fx:id="createAccountButton" layoutX="147.0" layoutY="279.0" style="-fx-background-color: #378ac9;" text="Créer le compte" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+
+        <Label fx:id="loginLinkLabel" layoutX="110.0" layoutY="330.0" style="-fx-cursor: hand;" text="Déjà un compte ? Se connecter" textFill="#378ac9" underline="true" />
+
+    </children>
+</AnchorPane>
